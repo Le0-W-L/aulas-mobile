@@ -2,11 +2,15 @@ package com.example.myapplication;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -82,12 +86,49 @@ public class Aula03Activity extends AppCompatActivity {
                 else {
                     selecionados.setLength(selecionados.length() - 2);
                 }
-                Toast.makeText(getApplicationContext(), selecionados.toString(), Toast.LENGTH_SHORT).show();}
+                Toast.makeText(getApplicationContext(), selecionados.toString(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        Spinner spinner = findViewById(R.id.spinner);
+        Button btnSpinner = findViewById(R.id.btnSpinner);
+
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
+                this, R.array.opcoes_spinner, android.R.layout.simple_spinner_item);
+
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
+
+        btnSpinner.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String opcaoSelecionada = spinner.getSelectedItem().toString();
+                Toast.makeText(Aula03Activity.this, "Selecionado: " +
+                        opcaoSelecionada, Toast.LENGTH_SHORT).show();
+            }
         });
     }
 
     public void ClickBotao(View view){
         EditText editText = findViewById(R.id.editTextNome);
         Toast.makeText(this, "Seu nome é: " + editText.getText(), Toast.LENGTH_SHORT).show();
+    }
+
+    public void checkRadios(View view){
+        RadioGroup radioGroup = findViewById(R.id.radioGroup);
+
+        int selectedId = radioGroup.getCheckedRadioButtonId();
+
+        if(selectedId == -1){
+            Toast.makeText(Aula03Activity.this,
+                    "Selecione uma opção!", Toast.LENGTH_SHORT).show();
+        }
+        else {
+            RadioButton selectedRadioButton = findViewById(selectedId);
+            String selectedText = selectedRadioButton.getText().toString();
+
+            Toast.makeText(Aula03Activity.this,
+                    "Selecionado: " + selectedText, Toast.LENGTH_SHORT).show();
+        }
     }
 }
