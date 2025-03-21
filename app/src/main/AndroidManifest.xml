@@ -13,6 +13,21 @@
         android:theme="@style/Theme.MyApplication"
         tools:targetApi="31">
         <activity
+            android:name=".Exercicio05"
+            android:exported="false" />
+        <activity
+            android:name=".Exercicio04"
+            android:exported="false" />
+        <activity
+            android:name=".Exercicio02"
+            android:exported="false" />
+        <activity
+            android:name=".Exercicio03"
+            android:exported="false" />
+        <activity
+            android:name=".Exercicio01"
+            android:exported="false" />
+        <activity
             android:name=".Exercicio06"
             android:exported="true">
             <intent-filter>
@@ -23,12 +38,10 @@
         </activity>
         <activity
             android:name=".Aula03Activity"
-            android:exported="false">
-        </activity>
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="false">
-        </activity>
+            android:exported="false" />
     </application>
 
 </manifest>
