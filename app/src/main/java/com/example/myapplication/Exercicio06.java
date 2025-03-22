@@ -24,7 +24,6 @@ public class Exercicio06 extends AppCompatActivity {
         Button btnExercicio03 = findViewById(R.id.button3);
         Button btnExercicio04 = findViewById(R.id.button4);
         Button btnExercicio05 = findViewById(R.id.button5);
-        Button btnExercicio06 = findViewById(R.id.button6);
 
         //Navegando entre as telas
         btnExercicio01.setOnClickListener(v -> {startActivity(new Intent(this, Exercicio01.class));});
@@ -32,7 +31,6 @@ public class Exercicio06 extends AppCompatActivity {
         btnExercicio03.setOnClickListener(v -> {startActivity(new Intent(this, Exercicio03.class));});
         btnExercicio04.setOnClickListener(v -> {startActivity(new Intent(this, Exercicio04.class));});
         btnExercicio05.setOnClickListener(v -> {startActivity(new Intent(this, Exercicio05.class));});
-        btnExercicio06.setOnClickListener(v -> {startActivity(new Intent(this, Exercicio06.class));});
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
